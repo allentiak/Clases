@@ -1,19 +1,21 @@
 package ayp2.clase03.instrumentos;
 
-public class Viento implements Instrumento {
+public abstract class Viento extends InstrumentoMusical implements Afinable, Lustrable {
 
-	@Override
-	public void tocar(String pieza) {
-		System.out.println("Tocando la pieza " + pieza);
+	protected Viento(String miNombre, String miDescripcion) {
+		super(miNombre, miDescripcion);
+	};
+
+	public void afinarManualmente() {
+		System.out.println("Afinando manualmente un viento... (No importa de qué tipo.)");
 	}
 
-	@Override
-	public String queEs() {
-		return "Instrumento de viento";
+	public void afinarAutomaticamente() {
+		System.out.println("Afinando automáticamente un viento... (No importa de qué tipo.)");
 	}
 
-	@Override
-	public void afinar() {
-		System.out.println("Afinando un instrumento de viento");
+	public void lustrar() {
+		System.out.println("Lustrando un Viento");
 	}
+
 }
